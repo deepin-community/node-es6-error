@@ -1,0 +1,30 @@
+Description: Build with babel7
+--- a/.babelrc
++++ b/.babelrc
+@@ -8,7 +8,7 @@
+   "env" : {
+     "test" : {
+       "presets": [
+-        ["env", { "targets": { "node": 5 } }]
++        ["@babel/preset-env", { "targets": { "node": 5 } }]
+       ]
+     },
+     "cjs" : {
+@@ -20,7 +20,7 @@
+         }]
+       ],
+       "presets": [
+-        ["env", { "modules": "commonjs" }]
++      	["@babel/preset-env", {"modules": "commonjs"}]
+       ]
+     },
+     "es6" : {
+@@ -31,7 +31,7 @@
+         }]
+       ],
+       "presets": [
+-        ["env", { "modules": false }]
++      	"@babel/preset-env",
+       ]
+     }
+   }

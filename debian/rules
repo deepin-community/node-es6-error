@@ -1,4 +1,12 @@
 #!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
 
 %:
 	dh $@
+
+override_dh_auto_build:
+	BABEL_ENV=cjs babeljs src/index.js -o lib/index.js
+	BABEL_ENV=es6 babeljs src/index.js -o es6/index.js
